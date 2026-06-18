@@ -1,0 +1,276 @@
+/* =========================================================
+   SVRN — Sovereign Brand Overrides for Dawn
+   Do not edit Dawn's base files — all brand customisation lives here.
+   Ink #0b0b0b | Bone #f0ece1 | Graphite #2a2d32 | Pearl #ededed
+   Display: Archivo 800 | Sub: Archivo 600 | Body: Inter 400
+   ========================================================= */
+
+/* ── Google Fonts Import ── */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;800&family=Inter:wght@400;600&display=swap');
+
+/* ── Brand Tokens ── */
+:root {
+  --svrn-ink:       #0b0b0b;
+  --svrn-bone:      #f0ece1;
+  --svrn-graphite:  #2a2d32;
+  --svrn-pearl:     #ededed;
+  --svrn-muted:     #7a7a7a;
+  --svrn-border:    rgba(240, 236, 225, 0.08);
+  --svrn-display:   "Archivo", sans-serif;
+  --svrn-body:      "Inter", system-ui, sans-serif;
+}
+
+/* ── Global Reset Overrides ── */
+body {
+  font-family: var(--svrn-body) !important;
+  background-color: var(--svrn-ink) !important;
+  color: var(--svrn-bone) !important;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Typography ── */
+h1, h2, h3, h4, h5, h6,
+.h0, .h1, .h2, .h3, .h4, .h5, .h6 {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+/* Dawn uses --font-heading-family, override it */
+.shopify-section h1,
+.shopify-section h2,
+.shopify-section h3 {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+}
+
+/* ── Header ── */
+.header-wrapper,
+.header {
+  background: rgba(11, 11, 11, 0.92) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--svrn-border) !important;
+}
+
+.header__heading-link,
+.header__heading {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  font-size: 1.2rem !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-bone) !important;
+}
+
+.header__menu-item,
+.header__menu-item span {
+  font-family: var(--svrn-display) !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-muted) !important;
+  transition: color 0.2s;
+}
+.header__menu-item:hover span { color: var(--svrn-bone) !important; }
+
+/* Header icon buttons */
+.header__icon svg { stroke: var(--svrn-bone) !important; }
+.header__icon:hover svg { stroke: var(--svrn-muted) !important; }
+
+/* ── Buttons ── */
+.button,
+.button--primary,
+button.button {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  font-size: 0.72rem !important;
+  letter-spacing: 0.18em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+  transition: background 0.2s, color 0.2s !important;
+}
+
+.button--primary {
+  background: var(--svrn-bone) !important;
+  color: var(--svrn-ink) !important;
+  border: none !important;
+}
+.button--primary:hover {
+  background: var(--svrn-pearl) !important;
+  color: var(--svrn-ink) !important;
+}
+
+.button--secondary {
+  background: transparent !important;
+  color: var(--svrn-bone) !important;
+  border: 1px solid rgba(240, 236, 225, 0.3) !important;
+}
+.button--secondary:hover {
+  border-color: var(--svrn-bone) !important;
+  background: transparent !important;
+}
+
+/* ── Product Cards ── */
+.card-wrapper,
+.card {
+  background: var(--svrn-ink) !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+
+.card__heading,
+.card__heading a {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  font-size: 0.9rem !important;
+  letter-spacing: 0.06em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-bone) !important;
+}
+
+.price,
+.price__regular,
+.price__sale {
+  font-family: var(--svrn-display) !important;
+  font-weight: 600 !important;
+  font-size: 0.8rem !important;
+  letter-spacing: 0.1em !important;
+  color: var(--svrn-muted) !important;
+}
+
+/* ── Sections ── */
+.shopify-section {
+  background: var(--svrn-ink);
+}
+
+/* Banner / Hero */
+.banner__content {
+  font-family: var(--svrn-display) !important;
+}
+
+.banner__heading {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ── Footer ── */
+.footer {
+  background: var(--svrn-ink) !important;
+  border-top: 1px solid var(--svrn-border) !important;
+}
+
+.footer__heading {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-bone) !important;
+}
+
+.footer a,
+.footer__list a {
+  font-size: 0.85rem !important;
+  color: var(--svrn-muted) !important;
+  transition: color 0.2s;
+}
+.footer a:hover { color: var(--svrn-bone) !important; }
+
+.footer__copyright {
+  font-size: 0.75rem !important;
+  color: var(--svrn-muted) !important;
+}
+
+/* ── Forms & Inputs ── */
+.field__input,
+.select__select,
+input[type="email"],
+input[type="text"],
+textarea {
+  font-family: var(--svrn-body) !important;
+  background: transparent !important;
+  border: 1px solid rgba(240, 236, 225, 0.15) !important;
+  border-radius: 0 !important;
+  color: var(--svrn-bone) !important;
+}
+
+.field__input:focus,
+input[type="email"]:focus {
+  border-color: var(--svrn-bone) !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.field__label {
+  font-family: var(--svrn-display) !important;
+  font-weight: 600 !important;
+  font-size: 0.7rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-muted) !important;
+}
+
+/* ── Cart Drawer ── */
+.cart-drawer {
+  background: var(--svrn-graphite) !important;
+  border-left: 1px solid var(--svrn-border) !important;
+}
+
+.cart-drawer__header {
+  border-bottom: 1px solid var(--svrn-border) !important;
+}
+
+/* ── Badges ── */
+.badge {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  font-size: 0.6rem !important;
+  letter-spacing: 0.15em !important;
+  text-transform: uppercase !important;
+  border-radius: 0 !important;
+}
+
+/* ── Password Page ── */
+.password-header__logo {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+}
+
+.password__hero-heading {
+  font-family: var(--svrn-display) !important;
+  font-weight: 800 !important;
+  text-transform: uppercase !important;
+  letter-spacing: -0.02em !important;
+}
+
+/* ── Section: Announcement Bar ── */
+.announcement-bar {
+  background: var(--svrn-graphite) !important;
+}
+.announcement-bar__message {
+  font-family: var(--svrn-display) !important;
+  font-weight: 600 !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.2em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-bone) !important;
+}
+
+/* ── Utility: Eyebrow labels ── */
+.eyebrow,
+[class*="overline"],
+[class*="caption"] {
+  font-family: var(--svrn-display) !important;
+  font-weight: 600 !important;
+  font-size: 0.65rem !important;
+  letter-spacing: 0.22em !important;
+  text-transform: uppercase !important;
+  color: var(--svrn-muted) !important;
+}
