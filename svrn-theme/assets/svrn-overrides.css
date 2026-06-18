@@ -80,6 +80,18 @@ h1, h2, h3, h4, h5, h6,
 .header__icon svg { stroke: var(--svrn-bone) !important; }
 .header__icon:hover svg { stroke: var(--svrn-muted) !important; }
 
+/* ── SVRN Wordmark in header ── */
+.svrn-wordmark-wrapper {
+  display: flex;
+  align-items: center;
+}
+.svrn-wordmark-img {
+  height: 28px !important;
+  width: auto !important;
+  object-fit: contain;
+  display: block;
+}
+
 /* ── Buttons ── */
 .button,
 .button--primary,

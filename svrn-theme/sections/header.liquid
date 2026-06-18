@@ -160,7 +160,17 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              {%- comment -%} SVRN — Use brand wordmark asset as nav logo {%- endcomment -%}
+              <div class="header__heading-logo-wrapper svrn-wordmark-wrapper">
+                <img
+                  src="{{ 'svrn-logo-wordmark.png' | asset_url }}"
+                  alt="SVRN — Sovereign"
+                  class="header__heading-logo svrn-wordmark-img"
+                  width="120"
+                  height="40"
+                  loading="eager"
+                >
+              </div>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -200,7 +210,17 @@
                 }}
               </div>
             {%- else -%}
-              <span class="h2">{{ shop.name }}</span>
+              {%- comment -%} SVRN — Use brand wordmark asset as nav logo {%- endcomment -%}
+              <div class="header__heading-logo-wrapper svrn-wordmark-wrapper">
+                <img
+                  src="{{ 'svrn-logo-wordmark.png' | asset_url }}"
+                  alt="SVRN — Sovereign"
+                  class="header__heading-logo svrn-wordmark-img"
+                  width="120"
+                  height="40"
+                  loading="eager"
+                >
+              </div>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
