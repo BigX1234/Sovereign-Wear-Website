@@ -33,10 +33,10 @@
   display: inline-block;
   font-family: var(--display);
   font-weight: 800;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
+  font-size: 0.85rem;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
-  padding: 1rem 2.25rem;
+  padding: 1.1rem 2.5rem;
   text-decoration: none;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, border-color 0.2s;
@@ -65,11 +65,10 @@
    HERO
    ========================================================= */
 .svrn-hero {
-  min-height: 100vh;
   background: var(--ink);
   display: flex;
   flex-direction: column;
-  padding-top: 68px; /* header height only */
+  padding-top: 68px; /* header height */
   position: relative;
   overflow: hidden;
 }
@@ -83,11 +82,7 @@
 }
 
 .svrn-hero__inner {
-  flex: 1;                /* fills all space between header and marquee */
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 4rem 1.5rem 3rem;
+  padding: 7vh 1.5rem 6vh;
   position: relative;
   z-index: 1;
 }
@@ -105,9 +100,9 @@
 
 .svrn-hero__subtext {
   font-family: var(--body-font);
-  font-size: 1.05rem;
+  font-size: 1.2rem;
   color: var(--muted);
-  max-width: 460px;
+  max-width: 500px;
   line-height: 1.75;
   margin-bottom: 2.5rem;
 }
