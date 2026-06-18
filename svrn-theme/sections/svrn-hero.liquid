@@ -1,0 +1,51 @@
+{{ 'svrn-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="svrn-hero" id="svrn-hero">
+  <div class="svrn-hero__inner page-width">
+    <p class="svrn-eyebrow">{{ section.settings.eyebrow }}</p>
+    <h1 class="svrn-hero__heading">{{ section.settings.heading | newline_to_br }}</h1>
+    <p class="svrn-hero__subtext">{{ section.settings.subtext }}</p>
+    <div class="svrn-hero__actions">
+      {%- if section.settings.btn1_label != blank -%}
+        <a href="{{ section.settings.btn1_link }}" class="svrn-btn svrn-btn--primary">
+          {{ section.settings.btn1_label }}
+        </a>
+      {%- endif -%}
+      {%- if section.settings.btn2_label != blank -%}
+        <a href="{{ section.settings.btn2_link | default: '#waitlist' }}" class="svrn-btn svrn-btn--ghost">
+          {{ section.settings.btn2_label }}
+        </a>
+      {%- endif -%}
+    </div>
+  </div>
+
+  <div class="svrn-hero__marquee" aria-hidden="true">
+    <div class="svrn-marquee-track">
+      <span>DISCIPLINE OVER COMFORT</span><span class="dot">·</span>
+      <span>SVRN</span><span class="dot">·</span>
+      <span>MASTER YOURSELF</span><span class="dot">·</span>
+      <span>SOVEREIGN</span><span class="dot">·</span>
+      <span>DISCIPLINE OVER COMFORT</span><span class="dot">·</span>
+      <span>SVRN</span><span class="dot">·</span>
+      <span>MASTER YOURSELF</span><span class="dot">·</span>
+      <span>SOVEREIGN</span><span class="dot">·</span>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SVRN Hero",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "Activewear — Gold Coast, AU" },
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Master\nyourself." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Built for those who train with intention. Sovereign activewear demands the same standard you hold yourself to." },
+    { "type": "text", "id": "btn1_label", "label": "Button 1 label", "default": "View Collection" },
+    { "type": "url", "id": "btn1_link", "label": "Button 1 link", "default": "/collections/all" },
+    { "type": "text", "id": "btn2_label", "label": "Button 2 label", "default": "Join Waitlist" },
+    { "type": "url", "id": "btn2_link", "label": "Button 2 link" }
+  ],
+  "presets": [{ "name": "SVRN Hero" }]
+}
+{% endschema %}

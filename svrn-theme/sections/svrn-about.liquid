@@ -1,0 +1,42 @@
+{{ 'svrn-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="svrn-about">
+  <div class="svrn-about__inner page-width">
+    <div class="svrn-about__text">
+      <p class="svrn-eyebrow">{{ section.settings.eyebrow }}</p>
+      <h2 class="svrn-about__heading">{{ section.settings.heading }}</h2>
+      <p class="svrn-about__body">{{ section.settings.body1 }}</p>
+      {%- if section.settings.body2 != blank -%}
+        <p class="svrn-about__body">{{ section.settings.body2 }}</p>
+      {%- endif -%}
+    </div>
+    <div class="svrn-about__stats">
+      <div class="svrn-stat">
+        <span class="svrn-stat__num">400<em>gsm</em></span>
+        <span class="svrn-stat__label">Heavyweight Cotton</span>
+      </div>
+      <div class="svrn-stat">
+        <span class="svrn-stat__num">4<em>-way</em></span>
+        <span class="svrn-stat__label">Stretch Fabric</span>
+      </div>
+      <div class="svrn-stat">
+        <span class="svrn-stat__num">AU</span>
+        <span class="svrn-stat__label">Designed in Australia</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SVRN About",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "eyebrow", "label": "Eyebrow", "default": "About SVRN" },
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Built from the ground up." },
+    { "type": "textarea", "id": "body1", "label": "Body paragraph 1", "default": "Sovereign started with one conviction: most activewear is designed for gyms, not for athletes. SVRN is different. Every cut, every fabric, every stitch is engineered to move with you — not against you." },
+    { "type": "textarea", "id": "body2", "label": "Body paragraph 2", "default": "Gold Coast roots. National ambitions. Built to last." }
+  ],
+  "presets": [{ "name": "SVRN About" }]
+}
+{% endschema %}

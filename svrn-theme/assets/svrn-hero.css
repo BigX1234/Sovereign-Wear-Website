@@ -1,0 +1,346 @@
+/* =========================================================
+   SVRN — Custom Section Styles
+   Hero · Marquee · Brand Statement · About · Waitlist
+   ========================================================= */
+
+/* ── Shared tokens ── */
+.svrn-hero, .svrn-statement, .svrn-about, .svrn-waitlist {
+  --ink:       #0b0b0b;
+  --bone:      #f0ece1;
+  --graphite:  #2a2d32;
+  --pearl:     #ededed;
+  --muted:     #7a7a7a;
+  --border:    rgba(240, 236, 225, 0.08);
+  --display:   "Archivo", sans-serif;
+  --body-font: "Inter", system-ui, sans-serif;
+}
+
+/* ── Eyebrow ── */
+.svrn-eyebrow {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1.25rem;
+  display: block;
+}
+.svrn-eyebrow--dark { color: rgba(11,11,11,0.5); }
+
+/* ── Buttons ── */
+.svrn-btn {
+  display: inline-block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  padding: 1rem 2.25rem;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  border: none;
+}
+.svrn-btn--primary {
+  background: var(--bone);
+  color: var(--ink);
+}
+.svrn-btn--primary:hover { background: var(--pearl); color: var(--ink); }
+
+.svrn-btn--ghost {
+  background: transparent;
+  color: var(--bone);
+  border: 1px solid rgba(240, 236, 225, 0.35);
+}
+.svrn-btn--ghost:hover { border-color: var(--bone); }
+
+.svrn-btn--ink {
+  background: var(--ink);
+  color: var(--bone);
+}
+.svrn-btn--ink:hover { background: var(--graphite); }
+
+/* =========================================================
+   HERO
+   ========================================================= */
+.svrn-hero {
+  min-height: 100vh;
+  background: var(--ink);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.svrn-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 50% at 50% 0%, rgba(42,45,50,0.5) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.svrn-hero__inner {
+  padding: 0 1.5rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.svrn-hero__heading {
+  font-family: var(--display) !important;
+  font-weight: 800 !important;
+  font-size: clamp(5rem, 16vw, 11rem) !important;
+  line-height: 0.92 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: uppercase !important;
+  color: var(--bone) !important;
+  margin: 0 0 2rem !important;
+}
+
+.svrn-hero__subtext {
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 460px;
+  line-height: 1.75;
+  margin-bottom: 2.5rem;
+}
+
+.svrn-hero__actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+/* ── Marquee ── */
+.svrn-hero__marquee {
+  overflow: hidden;
+  border-top: 1px solid var(--border);
+  padding: 1rem 0;
+  background: var(--ink);
+  position: relative;
+  z-index: 1;
+}
+
+.svrn-marquee-track {
+  display: flex;
+  gap: 2.5rem;
+  animation: svrn-marquee 20s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+
+.svrn-marquee-track span {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--muted);
+  flex-shrink: 0;
+}
+.svrn-marquee-track .dot { color: rgba(240,236,225,0.2); }
+
+@keyframes svrn-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+/* =========================================================
+   BRAND STATEMENT
+   ========================================================= */
+.svrn-statement {
+  background: var(--graphite);
+  padding: 9rem 1.5rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.svrn-statement__inner {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.svrn-statement__heading {
+  font-family: var(--display) !important;
+  font-weight: 800 !important;
+  font-size: clamp(3.5rem, 11vw, 8rem) !important;
+  line-height: 0.93 !important;
+  letter-spacing: -0.03em !important;
+  text-transform: uppercase !important;
+  color: var(--bone) !important;
+  margin-bottom: 2.5rem !important;
+}
+
+.svrn-statement__body {
+  font-family: var(--body-font);
+  font-size: 1.05rem;
+  color: var(--muted);
+  max-width: 540px;
+  margin: 0 auto;
+  line-height: 1.85;
+}
+
+/* =========================================================
+   ABOUT
+   ========================================================= */
+.svrn-about {
+  background: var(--ink);
+  padding: 7rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.svrn-about__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.svrn-about__heading {
+  font-family: var(--display) !important;
+  font-weight: 800 !important;
+  font-size: clamp(2.25rem, 4vw, 3.25rem) !important;
+  letter-spacing: -0.02em !important;
+  text-transform: uppercase !important;
+  color: var(--bone) !important;
+  margin-bottom: 1.5rem !important;
+  line-height: 1.05 !important;
+}
+
+.svrn-about__body {
+  font-family: var(--body-font);
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.svrn-about__stats {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.svrn-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 2rem 0;
+  border-bottom: 1px solid var(--border);
+}
+.svrn-stat:first-child { padding-top: 0; }
+.svrn-stat:last-child { border-bottom: none; }
+
+.svrn-stat__num {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 3rem;
+  letter-spacing: -0.03em;
+  color: var(--bone);
+  line-height: 1;
+}
+.svrn-stat__num em {
+  font-style: normal;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.svrn-stat__label {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* =========================================================
+   WAITLIST
+   ========================================================= */
+.svrn-waitlist {
+  background: var(--bone);
+  padding: 7rem 1.5rem;
+  border-top: 1px solid rgba(11,11,11,0.08);
+}
+
+.svrn-waitlist__inner {
+  max-width: 580px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.svrn-waitlist__heading {
+  font-family: var(--display) !important;
+  font-weight: 800 !important;
+  font-size: clamp(3rem, 7vw, 5.5rem) !important;
+  letter-spacing: -0.03em !important;
+  text-transform: uppercase !important;
+  line-height: 0.95 !important;
+  color: var(--ink) !important;
+  margin-bottom: 1rem !important;
+}
+
+.svrn-waitlist__sub {
+  font-family: var(--body-font);
+  font-size: 1rem;
+  color: rgba(11,11,11,0.55);
+  margin-bottom: 2.25rem;
+  line-height: 1.7;
+}
+
+.svrn-waitlist__fields {
+  display: flex;
+  border: 1px solid rgba(11,11,11,0.2);
+}
+
+.svrn-waitlist__input {
+  flex: 1;
+  padding: 1rem 1.25rem;
+  background: transparent;
+  border: none;
+  color: var(--ink);
+  font-family: var(--body-font);
+  font-size: 0.9rem;
+  outline: none;
+  min-width: 0;
+}
+.svrn-waitlist__input::placeholder { color: rgba(11,11,11,0.35); }
+
+.svrn-waitlist__note {
+  font-size: 0.75rem;
+  color: rgba(11,11,11,0.35);
+  margin-top: 1rem;
+}
+
+/* =========================================================
+   NAV LOGO (text-based)
+   ========================================================= */
+.svrn-nav-logo {
+  font-family: "Archivo", sans-serif !important;
+  font-weight: 800 !important;
+  font-size: 1.4rem !important;
+  letter-spacing: 0.16em !important;
+  text-transform: uppercase !important;
+  color: #f0ece1 !important;
+  line-height: 1 !important;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+@media (max-width: 768px) {
+  .svrn-hero__heading { font-size: clamp(3.5rem, 17vw, 5.5rem) !important; }
+  .svrn-hero__actions { flex-direction: column; }
+  .svrn-hero__actions .svrn-btn { text-align: center; }
+  .svrn-statement__heading { font-size: clamp(2.75rem, 14vw, 5rem) !important; }
+  .svrn-about__inner { grid-template-columns: 1fr; gap: 3.5rem; }
+  .svrn-waitlist__fields { flex-direction: column; border: none; gap: 0.75rem; }
+  .svrn-waitlist__input { border: 1px solid rgba(11,11,11,0.2); }
+  .svrn-waitlist__fields .svrn-btn--ink { width: 100%; text-align: center; }
+}

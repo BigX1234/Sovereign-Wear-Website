@@ -1,0 +1,22 @@
+{{ 'svrn-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="svrn-statement color-scheme-graphite">
+  <div class="svrn-statement__inner">
+    <h2 class="svrn-statement__heading">{{ section.settings.heading | newline_to_br }}</h2>
+    {%- if section.settings.body != blank -%}
+      <p class="svrn-statement__body">{{ section.settings.body }}</p>
+    {%- endif -%}
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SVRN Brand Statement",
+  "tag": "section",
+  "settings": [
+    { "type": "textarea", "id": "heading", "label": "Heading", "default": "Discipline\nover comfort." },
+    { "type": "textarea", "id": "body", "label": "Body text", "default": "Sovereign was built for people who show up. Who train when no one is watching. Who wear their standards, not their status. SVRN is not for everyone — and that's the point." }
+  ],
+  "presets": [{ "name": "SVRN Brand Statement" }]
+}
+{% endschema %}

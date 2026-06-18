@@ -1,0 +1,41 @@
+{{ 'svrn-hero.css' | asset_url | stylesheet_tag }}
+
+<section class="svrn-waitlist" id="waitlist">
+  <div class="svrn-waitlist__inner">
+    <p class="svrn-eyebrow svrn-eyebrow--dark">Pre-Launch</p>
+    <h2 class="svrn-waitlist__heading">{{ section.settings.heading }}</h2>
+    <p class="svrn-waitlist__sub">{{ section.settings.subtext }}</p>
+    <form class="svrn-waitlist__form" action="/contact#contact_form" method="post" accept-charset="UTF-8">
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="✓">
+      <input type="hidden" name="contact[tags]" value="waitlist">
+      <div class="svrn-waitlist__fields">
+        <input
+          type="email"
+          name="contact[email]"
+          placeholder="your@email.com"
+          required
+          aria-label="Email address"
+          class="svrn-waitlist__input"
+        >
+        <button type="submit" class="svrn-btn svrn-btn--ink">
+          {{ section.settings.btn_label }}
+        </button>
+      </div>
+    </form>
+    <p class="svrn-waitlist__note">No spam. Unsubscribe any time.</p>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "SVRN Waitlist",
+  "tag": "section",
+  "settings": [
+    { "type": "text", "id": "heading", "label": "Heading", "default": "Be first in line." },
+    { "type": "textarea", "id": "subtext", "label": "Subtext", "default": "Drop 001 launches soon. Join the waitlist for early access and founding member pricing." },
+    { "type": "text", "id": "btn_label", "label": "Button label", "default": "Join Waitlist" }
+  ],
+  "presets": [{ "name": "SVRN Waitlist" }]
+}
+{% endschema %}
