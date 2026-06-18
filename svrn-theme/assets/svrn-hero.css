@@ -69,8 +69,7 @@
   background: var(--ink);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  padding-top: 120px;
+  padding-top: 68px; /* header height only */
   position: relative;
   overflow: hidden;
 }
@@ -84,7 +83,11 @@
 }
 
 .svrn-hero__inner {
-  padding: 0 1.5rem 5rem;
+  flex: 1;                /* fills all space between header and marquee */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 4rem 1.5rem 3rem;
   position: relative;
   z-index: 1;
 }
@@ -127,12 +130,12 @@
 
 .svrn-marquee-track {
   display: flex;
-  gap: 2.5rem;
-  animation: svrn-marquee 20s linear infinite;
+  animation: svrn-marquee 24s linear infinite;
   white-space: nowrap;
-  width: max-content;
+  will-change: transform;
 }
 
+/* Each span carries its own spacing so the loop is pixel-perfect */
 .svrn-marquee-track span {
   font-family: var(--display);
   font-weight: 800;
@@ -141,12 +144,16 @@
   text-transform: uppercase;
   color: var(--muted);
   flex-shrink: 0;
+  padding: 0 1.5rem;
 }
-.svrn-marquee-track .dot { color: rgba(240,236,225,0.2); }
+.svrn-marquee-track .dot {
+  color: rgba(240,236,225,0.18);
+  padding: 0;
+}
 
 @keyframes svrn-marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
 }
 
 /* =========================================================
