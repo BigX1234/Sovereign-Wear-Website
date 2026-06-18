@@ -160,7 +160,10 @@
                 }}
               </div>
             {%- else -%}
-              <span class="svrn-nav-logo">SVRN</span>
+              <span class="svrn-nav-logo">
+                <img src="{{ 'svrn-logo-ink.png' | asset_url }}" alt="" class="svrn-nav-logo__icon" aria-hidden="true">
+                <span class="svrn-nav-logo__text">SVRN</span>
+              </span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}
@@ -200,7 +203,10 @@
                 }}
               </div>
             {%- else -%}
-              <span class="svrn-nav-logo">SVRN</span>
+              <span class="svrn-nav-logo">
+                <img src="{{ 'svrn-logo-ink.png' | asset_url }}" alt="" class="svrn-nav-logo__icon" aria-hidden="true">
+                <span class="svrn-nav-logo__text">SVRN</span>
+              </span>
             {%- endif -%}
           </a>
       {%- if request.page_type == 'index' -%}

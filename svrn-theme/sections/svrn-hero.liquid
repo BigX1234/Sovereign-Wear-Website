@@ -1,6 +1,9 @@
 {{ 'svrn-hero.css' | asset_url | stylesheet_tag }}
 
 <section class="svrn-hero" id="svrn-hero">
+
+  {{- 'svrn-logo-ink.png' | asset_url | img_tag: 'SVRN monogram', 'svrn-hero__logo-watermark', loading: 'eager', aria-hidden: 'true' -}}
+
   <div class="svrn-hero__inner page-width">
     <h1 class="svrn-hero__heading">{{ section.settings.heading | newline_to_br }}</h1>
     <p class="svrn-hero__subtext">{{ section.settings.subtext }}</p>

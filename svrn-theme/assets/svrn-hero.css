@@ -113,6 +113,21 @@
   flex-wrap: wrap;
 }
 
+/* ── Hero logo watermark ── */
+.svrn-hero__logo-watermark {
+  position: absolute;
+  right: -4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: min(72vw, 680px);
+  height: auto;
+  opacity: 0.07;
+  mix-blend-mode: screen;  /* makes the black bg invisible, only bone logo shows */
+  pointer-events: none;
+  user-select: none;
+  z-index: 0;
+}
+
 /* ── Marquee ── */
 .svrn-hero__marquee {
   overflow: hidden;
@@ -321,12 +336,36 @@
 }
 
 /* =========================================================
-   NAV LOGO (text-based)
+   NAV LOGO (icon + text)
    ========================================================= */
 .svrn-nav-logo {
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+  line-height: 1 !important;
+  text-decoration: none !important;
+}
+
+/* Monogram icon — crop into the centre of the padded image */
+.svrn-nav-logo__icon {
+  display: block !important;
+  width: 32px !important;
+  height: 32px !important;
+  object-fit: cover !important;
+  object-position: center !important;
+  /* scale up so the monogram fills the 32px box */
+  transform: scale(2.2) !important;
+  transform-origin: center !important;
+  /* prevent it bleeding outside the box */
+  overflow: hidden !important;
+  mix-blend-mode: screen !important;
+  opacity: 0.92 !important;
+}
+
+.svrn-nav-logo__text {
   font-family: "Archivo", sans-serif !important;
   font-weight: 800 !important;
-  font-size: 1.4rem !important;
+  font-size: 1.3rem !important;
   letter-spacing: 0.16em !important;
   text-transform: uppercase !important;
   color: #f0ece1 !important;
